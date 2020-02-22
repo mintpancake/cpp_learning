@@ -16,7 +16,7 @@ int main()
     for (int i = a; i < b; i++)
     {
         cout << i << ' ';
-        if (i % div1 == 0)
+        if (i % div1 == 0) //judge whether divisible
         {
             cout << "1 ";
         }
