@@ -108,7 +108,7 @@ void PrintHand(int c1, int c2, int c3, int c4, int c5)
             cout << 'K';
             break;
         default:
-            cout << rank;
+            cout << rank + 1;
             break;
         }
         switch (suit)
@@ -117,10 +117,10 @@ void PrintHand(int c1, int c2, int c3, int c4, int c5)
             cout << SPADE;
             break;
         case 1:
-            cout << CLUB;
+            cout << HEART;
             break;
         case 2:
-            cout << HEART;
+            cout << CLUB;
             break;
         case 3:
             cout << DIAMOND;
