@@ -24,7 +24,7 @@ int main()
         {
             cout << "0 ";
         }
-        if (i % div2 == 0)
+        if (i % div2 == 0) //judge whether divisible
         {
             cout << '1';
         }

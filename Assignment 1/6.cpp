@@ -56,7 +56,7 @@ int main()
     return 0;
 }
 
-void DealHand(int &c1, int &c2, int &c3, int &c4, int &c5)
+void DealHand(int &c1, int &c2, int &c3, int &c4, int &c5) //generate cards
 {
     c1 = rand() % 52;
     c2 = rand() % 52;
@@ -68,7 +68,7 @@ void DealHand(int &c1, int &c2, int &c3, int &c4, int &c5)
 void PrintHand(int c1, int c2, int c3, int c4, int c5)
 {
     int rank = 0, suit = 0;
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 5; i++) //generate ranks and suits
     {
         switch (i)
         {
@@ -140,7 +140,7 @@ void PrintHand(int c1, int c2, int c3, int c4, int c5)
 bool IsFourOfAKind(int c1, int c2, int c3, int c4, int c5)
 {
     int rank1 = 0, rank2 = 0, rank3 = 0, rank4 = 0, rank5 = 0;
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 5; i++) //get ranks
     {
         switch (i)
         {
@@ -165,7 +165,7 @@ bool IsFourOfAKind(int c1, int c2, int c3, int c4, int c5)
         rank1 == rank2 && rank2 == rank3 && rank3 == rank5 && rank1 != rank4 ||
         rank1 == rank2 && rank2 == rank4 && rank4 == rank5 && rank1 != rank3 ||
         rank1 == rank3 && rank3 == rank4 && rank4 == rank5 && rank1 != rank2 ||
-        rank2 == rank3 && rank3 == rank4 && rank4 == rank5 && rank2 != rank1)
+        rank2 == rank3 && rank3 == rank4 && rank4 == rank5 && rank2 != rank1) //judge condition
     {
         return true;
     }
@@ -175,7 +175,7 @@ bool IsFourOfAKind(int c1, int c2, int c3, int c4, int c5)
 bool IsFullHouse(int c1, int c2, int c3, int c4, int c5)
 {
     int rank1 = 0, rank2 = 0, rank3 = 0, rank4 = 0, rank5 = 0;
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 5; i++) //get ranks
     {
         switch (i)
         {
@@ -205,7 +205,7 @@ bool IsFullHouse(int c1, int c2, int c3, int c4, int c5)
         rank2 == rank3 && rank3 == rank4 && rank1 == rank5 && rank2 != rank1 ||
         rank2 == rank3 && rank3 == rank5 && rank1 == rank4 && rank2 != rank1 ||
         rank2 == rank4 && rank4 == rank5 && rank1 == rank3 && rank2 != rank1 ||
-        rank3 == rank4 && rank4 == rank5 && rank1 == rank2 && rank3 != rank1)
+        rank3 == rank4 && rank4 == rank5 && rank1 == rank2 && rank3 != rank1) //judge condition
     {
         return true;
     }
@@ -215,7 +215,7 @@ bool IsFullHouse(int c1, int c2, int c3, int c4, int c5)
 bool IsFlush(int c1, int c2, int c3, int c4, int c5)
 {
     int suit1 = 0, suit2 = 0, suit3 = 0, suit4 = 0, suit5 = 0;
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 5; i++) //get suits
     {
         switch (i)
         {
@@ -236,7 +236,7 @@ bool IsFlush(int c1, int c2, int c3, int c4, int c5)
             break;
         }
     }
-    if (suit1 == suit2 && suit2 == suit3 && suit3 == suit4 && suit4 == suit5)
+    if (suit1 == suit2 && suit2 == suit3 && suit3 == suit4 && suit4 == suit5) //judge condition
     {
         return true;
     }
@@ -246,7 +246,7 @@ bool IsFlush(int c1, int c2, int c3, int c4, int c5)
 bool IsThreeOfAKind(int c1, int c2, int c3, int c4, int c5)
 {
     int rank1 = 0, rank2 = 0, rank3 = 0, rank4 = 0, rank5 = 0;
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 5; i++) //get ranks
     {
         switch (i)
         {
@@ -276,7 +276,7 @@ bool IsThreeOfAKind(int c1, int c2, int c3, int c4, int c5)
         rank2 == rank3 && rank3 == rank4 && rank1 != rank5 && rank2 != rank1 ||
         rank2 == rank3 && rank3 == rank5 && rank1 != rank4 && rank2 != rank1 ||
         rank2 == rank4 && rank4 == rank5 && rank1 != rank3 && rank2 != rank1 ||
-        rank3 == rank4 && rank4 == rank5 && rank1 != rank2 && rank3 != rank1)
+        rank3 == rank4 && rank4 == rank5 && rank1 != rank2 && rank3 != rank1) //judge condition
     {
         return true;
     }
@@ -286,7 +286,7 @@ bool IsThreeOfAKind(int c1, int c2, int c3, int c4, int c5)
 bool IsTwoPair(int c1, int c2, int c3, int c4, int c5)
 {
     int rank1 = 0, rank2 = 0, rank3 = 0, rank4 = 0, rank5 = 0;
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 5; i++) //get ranks
     {
         switch (i)
         {
@@ -321,7 +321,7 @@ bool IsTwoPair(int c1, int c2, int c3, int c4, int c5)
         rank1 == rank5 && rank3 == rank4 && rank1 != rank3 && rank1 != rank2 && rank3 != rank2 ||
         rank2 == rank3 && rank4 == rank5 && rank2 != rank4 && rank2 != rank1 && rank4 != rank1 ||
         rank2 == rank4 && rank3 == rank5 && rank2 != rank3 && rank2 != rank1 && rank3 != rank1 ||
-        rank2 == rank5 && rank3 == rank4 && rank2 != rank3 && rank2 != rank1 && rank3 != rank1)
+        rank2 == rank5 && rank3 == rank4 && rank2 != rank3 && rank2 != rank1 && rank3 != rank1) //judge condition
     {
         return true;
     }
@@ -331,7 +331,7 @@ bool IsTwoPair(int c1, int c2, int c3, int c4, int c5)
 bool IsOnePair(int c1, int c2, int c3, int c4, int c5)
 {
     int rank1 = 0, rank2 = 0, rank3 = 0, rank4 = 0, rank5 = 0;
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 5; i++) //get ranks
     {
         switch (i)
         {
@@ -361,7 +361,7 @@ bool IsOnePair(int c1, int c2, int c3, int c4, int c5)
         rank2 == rank5 && rank2 != rank1 && rank2 != rank3 && rank2 != rank4 && rank1 != rank3 && rank1 != rank4 && rank3 != rank4 ||
         rank3 == rank4 && rank3 != rank1 && rank3 != rank2 && rank3 != rank5 && rank1 != rank2 && rank1 != rank5 && rank2 != rank5 ||
         rank3 == rank5 && rank3 != rank1 && rank3 != rank2 && rank3 != rank4 && rank1 != rank2 && rank1 != rank4 && rank2 != rank4 ||
-        rank4 == rank5 && rank4 != rank1 && rank4 != rank2 && rank4 != rank3 && rank1 != rank2 && rank1 != rank3 && rank2 != rank3)
+        rank4 == rank5 && rank4 != rank1 && rank4 != rank2 && rank4 != rank3 && rank1 != rank2 && rank1 != rank3 && rank2 != rank3) //judge condition
     {
         return true;
     }

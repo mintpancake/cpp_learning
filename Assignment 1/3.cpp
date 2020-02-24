@@ -4,7 +4,7 @@
 using namespace std;
 
 double cosApprox(int, int);
-double fac(double);
+double fac(double); //calculate factorial
 
 int main()
 {
@@ -23,7 +23,7 @@ int main()
 double cosApprox(int x, int n)
 {
     double result = 0.0;
-    for (int i = 0; i <= n; i++)
+    for (int i = 0; i <= n; i++) //perform Taylor series approximation
     {
         result += pow(-1, i) / fac(2 * i) * pow(x, 2 * i);
     }

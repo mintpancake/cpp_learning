@@ -4,8 +4,8 @@ using namespace std;
 
 int main()
 {
-    double xMax = numeric_limits<double>::lowest(),
-           yMax = numeric_limits<double>::lowest(),
+    double xMax = numeric_limits<double>::lowest(), //set max and min to bounds
+        yMax = numeric_limits<double>::lowest(),
            xMin = numeric_limits<double>::max(),
            yMin = numeric_limits<double>::max(),
            xAABB = 0.0, yAABB = 0.0, widthAABB = 0.0, heightAABB = 0.0;
@@ -17,7 +17,7 @@ int main()
         {
             double x = 0.0, y = 0.0, width = 0.0, height = 0.0;
             cin >> x >> y >> width >> height;
-            if ((x + width / 2) > xMax)
+            if ((x + width / 2) > xMax) //set max and min
             {
                 xMax = x + width / 2;
             }
@@ -81,12 +81,12 @@ int main()
                 }
             }
         }
-        else if (type == '#')
+        else if (type == '#') //break condition
         {
             break;
         }
     }
-    xAABB = (xMin + xMax) / 2;
+    xAABB = (xMin + xMax) / 2; //calculate x, y, width, height
     yAABB = (yMin + yMax) / 2;
     widthAABB = xMax - xMin;
     heightAABB = yMax - yMin;
