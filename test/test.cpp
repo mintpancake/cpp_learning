@@ -1,10 +1,11 @@
 #include <iostream>
+#include <iomanip>
+#include <cmath>
 using namespace std;
 
 int main()
 {
-    int y = 9;
-    int x = 13;
-    int z = y / x;
-    cout << z;
+    double a = 0.0;
+    a = pow(-1, 5);
+    cout << fixed << setprecision(15) << a << endl;
 }
