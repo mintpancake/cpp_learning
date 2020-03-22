@@ -1,0 +1,1 @@
+17 formatted lines written to output/text_6_formatted.txt

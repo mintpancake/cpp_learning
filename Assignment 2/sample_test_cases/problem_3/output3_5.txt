@@ -1,0 +1,1 @@
+4 formatted lines written to output/text_5_formatted.txt
